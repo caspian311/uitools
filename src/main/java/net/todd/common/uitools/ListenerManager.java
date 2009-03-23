@@ -9,7 +9,7 @@ public class ListenerManager {
 	public ListenerManager() {
 		listeners = new ArrayList<IListener>();
 	}
-	
+
 	public void addListener(IListener listener) {
 		if (!listeners.contains(listener)) {
 			listeners.add(listener);
@@ -20,5 +20,9 @@ public class ListenerManager {
 		for (IListener listener : listeners) {
 			listener.fireEvent();
 		}
+	}
+
+	public void removeListener(IListener listener) {
+		listeners.remove(listener);
 	}
 }
